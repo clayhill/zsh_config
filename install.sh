@@ -22,17 +22,20 @@ function change_shell() {
 }
 
 function install_antigen() {
-  echo "Installing antigen"
+  echo -e "\nInstalling antigen"
   git clone https://github.com/zsh-users/antigen.git ~/.antigen
+
+  echo -e "\nCopying antigenrc"
   cp antigenrc ~/.antigenrc
 }
 
 function update_zshrc() {
+  echo -e "\nCopying zshrc"
   cp zshrc ~/.zshrc
 }
 
-if ! which zsh; then
-  echo "zsh is not installed on the system."
+if ! which zsh > /dev/null; then
+  echo "The zsh is not installed on the system. Aborting."
   exit 1
 fi
 
