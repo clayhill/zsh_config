@@ -23,10 +23,7 @@ function change_shell() {
 
 function install_antigen() {
   echo -e "\nInstalling antigen"
-  [ -d ~/.antigen ] || git clone https://github.com/zsh-users/antigen.git ~/.antigen
-
-  echo -e "\nCopying antigenrc"
-  cp antigenrc ~/.antigenrc
+  curl -L git.io/antigen > ~/antigen.zsh
 }
 
 function update_zshrc() {
